@@ -3,6 +3,7 @@ using Application.DTOs;
 using Application.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -31,7 +32,7 @@ namespace API.Controllers
         public async Task<IActionResult> DividendPayout(DividendPayoutInputDto model)
         {
             var response = await _paymentService.DividendPayout(model);
-            return Ok(response);
+            return Created(Request.GetDisplayUrl(), response);
         }
 
         [HttpPost("dividend-record")]

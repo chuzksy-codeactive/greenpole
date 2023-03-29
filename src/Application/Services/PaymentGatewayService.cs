@@ -42,6 +42,10 @@ namespace Application.Services
 
             var result = _mapper.Map<DividendPayoutResponseDto>(dividendPayout);
 
+            // _scheduler.ScheduleJob(new DividendPayoutJob(payout.DividendPayoutId));
+
+            // TODO: send email on new payout created
+
             return new SuccessResponse<DividendPayoutResponseDto>
             {
                 Message = "Dividend payout created successfully",

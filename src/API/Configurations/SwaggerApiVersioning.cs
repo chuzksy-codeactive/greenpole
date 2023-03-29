@@ -88,20 +88,20 @@ namespace API.Configurations
         {
             var info = new OpenApiInfo
             {
-                Title = "HIRS API",
+                Title = "GreenPole API",
                 Version = description.ApiVersion.ToString(),
-                Description = "HIRS API",
-                TermsOfService = new Uri("https://prunedge.com/terms"),
+                Description = "GreenPole API",
+                TermsOfService = new Uri("https://greenpole.com/terms"),
                 Contact = new OpenApiContact
                 {
-                    Name = "Prunedge Admin",
-                    Email = "admin@prunedge.com",
-                    Url = new Uri("https://prunedge.com")
+                    Name = "AP Admin",
+                    Email = "admin@greenpole.com",
+                    Url = new Uri("https://greenpole.com")
                 },
                 License = new OpenApiLicense
                 {
-                    Name = "Prunedge Developer Licence",
-                    Url = new Uri("https://prunedge.com/licence")
+                    Name = "AP Developer Licence",
+                    Url = new Uri("https://greenpole.com/licence")
                 }
             };
 

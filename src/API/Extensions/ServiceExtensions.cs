@@ -21,6 +21,7 @@ using API.Configurations;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Application.Contracts;
+using Application.Services;
 
 namespace API.Extensions
 {
@@ -111,7 +112,7 @@ namespace API.Extensions
                 o.InvalidModelStateResponseFactory = context => new ValidationFailedResult(context.ModelState);
             });
             services.AddValidatorsFromAssemblyContaining<UserValidator>();
-            services.AddScoped<IPaymentGatewayService, IPaymentGatewayService>();
+            services.AddScoped<IPaymentGatewayService, PaymentGatewayService>();
         }
 
         public static void ConfigureApiVersioning(this IServiceCollection services, IConfiguration configuration)

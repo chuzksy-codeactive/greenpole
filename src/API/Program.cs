@@ -1,5 +1,6 @@
 using API.Extensions;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Application.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,7 @@ builder.Services.ConfigureJWT(builder.Configuration);
 builder.Services.ConfigureSwagger();
 builder.Services.ConfigureApiVersioning(builder.Configuration);
 builder.Services.ConfigureMvc();
+builder.Services.ConfigureMappings();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 var app = builder.Build();
